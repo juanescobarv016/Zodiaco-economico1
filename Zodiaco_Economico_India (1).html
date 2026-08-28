@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zodiaco Económico — India</title>
+<style>
+:root{--bg:#08070d;--panel:#17121f;--panel2:#21172d;--line:#514064;--gold:#e7bd68;--violet:#9d7bea;--white:#f8f4ff;--muted:#afa6b9;--green:#55d49b;--red:#ed6e86;--orange:#e8a957}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -5%,#3b2550 0,#0d0912 42%,#07060b 100%);color:var(--white);font-family:Inter,Arial,sans-serif;min-height:100vh}body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:75px 75px;opacity:.18}
+button,input{font:inherit}.hidden{display:none!important}.screen{min-height:100vh;display:grid;place-items:center;padding:24px;position:relative;z-index:1}.intro{max-width:950px;width:100%;text-align:center;padding:45px;background:linear-gradient(145deg,#24182fee,#0e0a13f5);border:1px solid var(--line);border-radius:25px;box-shadow:0 30px 100px #000b}.brand{font-family:Georgia,serif;color:#ffe19b}.brand .z{font-size:42px}.brand h1{font-size:clamp(38px,7vw,70px);margin:8px 0}.muted{color:var(--muted)}.teams{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:25px 0}.field{text-align:left}.field label{display:block;font-size:10px;color:var(--muted);text-transform:uppercase;margin-bottom:5px}.field input{width:100%;background:#0b0910;border:1px solid var(--line);border-radius:9px;color:#fff;padding:10px}.btn{border:1px solid #705b9b;background:linear-gradient(135deg,#9271df,#543b85);color:#fff;border-radius:10px;padding:11px 15px;font-weight:800;cursor:pointer}.btn:disabled{opacity:.4;cursor:not-allowed}.gold{background:linear-gradient(135deg,#f1cf7b,#9c6728);border-color:#e7bd68;color:#1c1106}.green{background:#256b4e;border-color:#4ca67e}.red{background:#813448;border-color:#b9526c}.ghost{background:#15101c;border-color:var(--line)}
+header{position:sticky;top:0;z-index:20;background:#08070eee;backdrop-filter:blur(15px);border-bottom:1px solid var(--line);padding:12px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px}.logo{font-family:Georgia,serif;color:#ffe19b;font-weight:bold}.pills{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.pill{font-size:12px;padding:7px 10px;border:1px solid var(--line);border-radius:99px;background:#15101c}.layout{max-width:1500px;margin:auto;padding:18px;display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:17px}.card{background:linear-gradient(145deg,#21172eee,#100c15f5);border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 55px #0007}.panel{padding:18px;margin-bottom:17px}.title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}.title h2{font-family:Georgia,serif;color:#ffe19b;margin:0}
+.rouletteSingle{display:flex;flex-direction:column;align-items:center;gap:16px}.wheelOuter{position:relative;width:290px;height:290px;max-width:80vw;max-height:80vw}.pointer{position:absolute;top:-16px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:24px solid var(--gold);z-index:5;filter:drop-shadow(0 2px 4px #000a)}#wheelDisc{width:100%;height:100%;border-radius:50%;position:relative;border:6px solid #0a0810;box-shadow:0 0 0 3px #dfba6855,inset 0 0 40px #0008;transition:transform 4.2s cubic-bezier(.17,.67,.12,1);transform:rotate(0deg)}.wheelCenter{position:absolute;top:50%;left:50%;width:56px;height:56px;background:radial-gradient(circle,#fff3d6,#caa955);border-radius:50%;transform:translate(-50%,-50%);display:grid;place-items:center;font-size:22px;box-shadow:0 0 15px #0007;z-index:4}.sliceLabel{position:absolute;width:104px;text-align:center;font-size:20px;transform:translate(-50%,-50%);pointer-events:none;transition:opacity .3s}.sliceLabel small{display:block;font-size:9px;font-weight:800;color:#fff;text-transform:uppercase;text-shadow:0 1px 3px #000;margin-top:2px}.sliceLabel.used{opacity:.3}
+.situation{padding:20px;border-radius:16px;border:1px solid #604974;background:radial-gradient(circle at 100% 0,#3a244b,#151019 60%);line-height:1.6}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.tag{font-size:10px;border:1px solid #5a456c;background:#21182d;border-radius:99px;padding:5px 8px}.choices{display:grid;gap:10px;margin-top:15px}.choice{position:relative;text-align:left;width:100%;padding:16px 15px;background:#0e0b13;color:#fff;border:1px solid var(--line);border-radius:12px;cursor:pointer;transition:.18s}.choice:hover:not(.locked){border-color:var(--gold);transform:translateY(-2px)}.choice.locked{pointer-events:none}.choice.selected{background:#241a30;border-color:var(--violet);box-shadow:0 0 0 1px var(--violet) inset}.timer{text-align:center;margin-top:14px}.timer strong{font:700 42px Georgia;color:#ffe19b}.danger{color:var(--red)!important}.bar{height:8px;border:1px solid var(--line);background:#08070d;border-radius:99px;overflow:hidden}.fill{height:100%;width:100%;background:linear-gradient(90deg,var(--green),var(--gold),var(--red));transition:.2s}.feedback{padding:13px;margin-top:12px;border-radius:11px;background:#0e0b13;border:1px solid var(--line);line-height:1.5}.correct{color:var(--green);font-weight:800}.partialText{color:var(--gold);font-weight:800}.wrong{color:var(--red);font-weight:800}.scores{display:grid;gap:7px}.team{display:flex;justify-content:space-between;align-items:center;padding:11px;border:1px solid var(--line);border-radius:10px;background:#0e0b13}.team.active{border-color:var(--gold);box-shadow:0 0 15px #e7bd6822}.score{font:700 20px Georgia;color:#ffe19b}
+.concepts{display:flex;flex-wrap:wrap;gap:7px}.concept{padding:7px 9px;border-radius:99px;background:#0f0c14;border:1px solid var(--line);font-size:10px;color:#ddd;cursor:pointer}.concept.sel{background:#4c3920;border-color:var(--gold);color:#ffe19b}.constellation{height:310px;margin-top:12px;border:1px solid var(--line);border-radius:14px;background:#080810;overflow:hidden}.constellation canvas{width:100%;height:100%}
+.modscore{margin-top:14px;padding:13px;border-radius:11px;background:#15101c;border:1px dashed #6a5482}.modscore .lbl{font-size:11px;color:var(--muted);text-transform:uppercase;margin-bottom:8px}.modscore .row{display:flex;gap:8px;flex-wrap:wrap}.mbtn{padding:9px 16px;border-radius:9px;border:1px solid var(--line);background:#0e0b13;color:#fff;cursor:pointer;font-weight:800}.mbtn:hover:not(:disabled){border-color:var(--gold)}.mbtn:disabled{opacity:.35;cursor:not-allowed}.modscore.done{border-style:solid;border-color:var(--green)}
+.fpp{width:100%;border:1px solid var(--line);border-radius:12px;background:#0c0a10}.rules{font-size:12px;line-height:1.6;color:#cfc7d5}.challenge{padding:14px;border:1px solid var(--line);border-radius:11px;background:#0e0b13;line-height:1.5}.modal{position:fixed;inset:0;z-index:50;background:#000c;display:grid;place-items:center;padding:20px}.modalbox{max-width:760px;width:100%;padding:25px}.confetti{position:fixed;inset:0;z-index:70;pointer-events:none}.piece{position:absolute;width:8px;height:15px;animation:fall 1.7s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@media(max-width:1050px){.layout{grid-template-columns:1fr}}@media(max-width:650px){.teams{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<div id="start" class="screen">
+<div class="intro">
+<div class="brand"><div class="z">♈ ✦ ♉ ✦ ♊ ✦ ♌ ✦ ♏</div><h1>ZODIACO ECONÓMICO</h1></div>
+<p><b>India: alimentos hoy o maquinaria agrícola para el mañana</b></p>
+<p class="muted">Juego de decisiones económicas. Hay 5 equipos y 5 situaciones fijas. En cada ronda, el equipo gira la ruleta, resuelve la situación que le cae y arma su carta astral. El moderador asigna el puntaje de ambas partes con la guía impresa aparte.</p>
+<div class="teams">
+<div class="field"><label>Equipo 1</label><input id="n1" value="Samsara"></div>
+<div class="field"><label>Equipo 2</label><input id="n2" value="Karma"></div>
+<div class="field"><label>Equipo 3</label><input id="n3" value="Dharma"></div>
+<div class="field"><label>Equipo 4</label><input id="n4" value="Moksha"></div>
+<div class="field"><label>Equipo 5</label><input id="n5" value="Veda"></div>
+</div>
+<button class="btn gold" onclick="startGame()">✨ INICIAR JUEGO</button>
+</div></div>
+
+<div id="game" class="hidden">
+<header><div class="logo">✦ ZODIACO ECONÓMICO</div><div class="pills"><span class="pill">Ronda <b id="round">1</b>/5</span><span class="pill">Turno: <b id="turn">—</b></span><button class="btn red" onclick="finish()">🏆 Final</button></div></header>
+<div class="layout">
+<main>
+<section class="card panel">
+<div class="title"><div><h2>🎰 Ruleta de situaciones</h2><span class="muted">Gira la ruleta: la situación que caiga es la que tu equipo debe resolver.</span></div><button id="spinBtn" class="btn gold" onclick="spinWheel()">✨ GIRAR</button></div>
+<div class="rouletteSingle">
+<div class="wheelOuter"><div class="pointer"></div><div id="wheelDisc"></div><div class="wheelCenter">🔮</div></div>
+</div>
+</section>
+
+<section class="card panel">
+<div class="title"><div><h2>🔮 Decisión económica</h2><span class="muted">Seleccionen la alternativa y después justifíquenla oralmente. El puntaje lo asigna el moderador aparte.</span></div></div>
+<div id="situation" class="situation"><h3>El destino espera...</h3><p>Gira la ruleta para descubrir la situación de este equipo.</p></div>
+<div id="choices" class="choices"></div>
+<div id="timer" class="timer hidden"><strong id="tn">45</strong><div class="bar"><div id="fill" class="fill"></div></div></div>
+<div id="feedback" class="feedback hidden"></div>
+<div id="modscoreSit" class="modscore hidden"><div class="lbl">Panel del moderador — puntaje de la decisión (según la guía)</div><div class="row" id="modscoreSitRow"></div></div>
+</section>
+
+<section class="card panel">
+<div class="title"><div><h2>🌌 Carta Astral</h2><span class="muted">Cada equipo selecciona exactamente 5 conceptos y los conecta con la situación.</span></div><button class="btn gold" onclick="drawConstellation()">✨ FORMAR CONSTELACIÓN</button></div>
+<div id="concepts" class="concepts"></div>
+<div id="selectedList" class="selectedList muted">0/5 seleccionados</div>
+<div class="constellation"><canvas id="constCanvas" width="900" height="310"></canvas></div>
+<div id="modscoreCarta" class="modscore hidden"><div class="lbl">Panel del moderador — puntaje de la carta astral (según la guía)</div><div class="row" id="modscoreCartaRow"></div></div>
+</section>
+
+<section class="card panel">
+<div class="title"><div><h2>📈 Frontera de Posibilidades de Producción</h2><span class="muted">X: alimentos · Y: maquinaria agrícola.</span></div></div>
+<canvas id="fppCanvas" class="fpp" width="900" height="470"></canvas>
+</section>
+
+<section class="card panel">
+<div class="title"><div><h2>⚡ Reto Relámpago</h2><span class="muted">Conceptos de la exposición.</span></div><button class="btn gold" onclick="newChallenge()">Nuevo reto</button></div>
+<div id="question" class="challenge">Pulsa "Nuevo reto".</div><div id="answer" class="feedback hidden"></div><button class="btn green" onclick="revealChallenge()">👀 Revelar</button>
+</section>
+
+<section class="card panel"><div style="margin-top:2px"><button class="btn ghost" onclick="nextRound()">➡️ Siguiente equipo</button></div></section>
+</main>
+
+<aside>
+<section class="card panel"><div class="title"><h2>🏆 Marcador</h2></div><div id="scores" class="scores"></div></section>
+<section class="card panel"><h2>📜 Reglas</h2><div class="rules">
+<b>1. Equipos:</b> participan 5 grupos.<br><br>
+<b>2. Rondas:</b> hay exactamente 5 rondas; en cada una juega un equipo distinto, en orden.<br><br>
+<b>3. Ruleta:</b> existen 5 situaciones fijas de escasez en la India agrícola. Cada ronda, el equipo gira la ruleta y la situación que cae es la que debe resolver. Cada situación solo se usa una vez en toda la partida.<br><br>
+<b>4. Tiempo:</b> el equipo tiene <b>45 segundos</b> para elegir su alternativa y preparar su justificación.<br><br>
+<b>5. Respuesta:</b> se selecciona una alternativa y se defiende oralmente identificando recurso escaso, agentes, alternativas, costo de oportunidad y FPP.<br><br>
+<b>6. Carta Astral:</b> el equipo elige exactamente 5 conceptos y explica cómo se conectan con la situación resuelta.<br><br>
+<b>7. Puntaje:</b> ni la app ni los estudiantes ven el puntaje de las opciones. El moderador consulta el documento aparte con las respuestas correctas y las sustentaciones esperadas, y asigna el puntaje (0 a 3) de la decisión y de la carta astral desde el panel del moderador.<br><br>
+<b>8. Ganador:</b> gana el grupo con mayor puntaje total.
+</div></section>
+</aside>
+</div></div>
+
+<div id="modal" class="modal hidden"><div class="card modalbox"><div id="modalText"></div><button class="btn gold" onclick="closeModal()">Cerrar</button></div></div>
+<div id="confetti" class="confetti"></div>
+
+<script>
+const SITUATIONS=[
+{icon:"♈",name:"Sequía en Punjab",tags:["🌧️ Sequía","💧 Agua","🌾 Trigo","👨‍🌾 Agricultores"],
+text:"En la región agrícola de Punjab, una sequía prolongada ha reducido drásticamente el agua disponible para riego. Los agricultores deben decidir cómo usar el agua restante: regar el trigo ya sembrado (alimento inmediato) o mantener en funcionamiento el sistema de riego tecnificado que permitiría sembrar más tierra la próxima temporada (inversión futura). El agua no alcanza para ambos usos al mismo nivel.",
+options:[
+{label:"A",text:"Priorizar el riego del trigo ya sembrado para asegurar la cosecha de alimento inmediato, aceptando que el sistema de riego tecnificado no se amplíe esta temporada."},
+{label:"B",text:"Repartir el agua entre el trigo sembrado y el mantenimiento parcial del sistema de riego, sacrificando parte de ambos objetivos."},
+{label:"C",text:"Destinar casi toda el agua al sistema de riego tecnificado para sembrar más tierra el próximo año, aunque el trigo actual se pierda en gran parte."},
+{label:"D",text:"Usar el agua sin restricciones, porque al ser un bien natural no debería considerarse un recurso escaso."}]},
+
+{icon:"♉",name:"Plaga de langostas en Rajastán",tags:["🦠 Plaga","👨‍🌾 Trabajo","🫘 Legumbres","🏭 Infraestructura"],
+text:"Una plaga de langostas amenaza los cultivos de legumbres de una cooperativa en Rajastán. Con mano de obra y pesticida limitados, la cooperativa debe decidir entre usar esos recursos para salvar la cosecha en pie (alimento del presente) o proteger la semilla almacenada y la maquinaria de siembra guardada en las bodegas (capacidad para sembrar la próxima temporada). No hay suficiente mano de obra ni insumos para atender ambos frentes por completo.",
+options:[
+{label:"A",text:"Concentrar la mano de obra y el pesticida disponible en salvar la cosecha en pie, asumiendo que la protección de semilla y maquinaria quedará reducida esta vez."},
+{label:"B",text:"Dividir el esfuerzo entre salvar parte de la cosecha y proteger parte de la semilla y la maquinaria, sacrificando algo en cada frente."},
+{label:"C",text:"Enfocar casi todo el esfuerzo en proteger la semilla y la maquinaria para la siguiente siembra, aunque se pierda la mayor parte de la cosecha actual."},
+{label:"D",text:"Suponer que, como la plaga es un evento natural, la cooperativa no tiene ninguna decisión real que tomar."}]},
+
+{icon:"♊",name:"Nueva maquinaria en Uttar Pradesh",tags:["🤖 Nueva tecnología","🚜 Maquinaria","🍚 Arroz","👨‍🌾 Productores rurales"],
+text:"El gobierno ofrece tractores subsidiados a un grupo de productores rurales en Uttar Pradesh. Adoptar la maquinaria de inmediato exige destinar tiempo, mano de obra y ahorros a la capacitación y adaptación de los terrenos, lo que reduciría la siembra de arroz de esta temporada. Seguir con los métodos manuales permitiría maximizar la cosecha de arroz actual, pero postergaría la mejora en productividad futura.",
+options:[
+{label:"A",text:"Aprovechar el subsidio para adoptar la maquinaria de forma gradual, evaluando cuánta tierra puede dedicarse a la transición sin poner en riesgo la producción de arroz necesaria este año."},
+{label:"B",text:"Adoptar la maquinaria en toda la extensión posible de inmediato, sin reservar tierra ni tiempo suficiente para asegurar el arroz de esta temporada."},
+{label:"C",text:"Rechazar por completo la maquinaria y mantener únicamente los métodos manuales, aunque eso implique renunciar a toda mejora de productividad futura."},
+{label:"D",text:"Asumir que la nueva tecnología elimina automáticamente la escasez de tierra y mano de obra, por lo que ya no habría que elegir nada."}]},
+
+{icon:"♌",name:"Caída de la demanda internacional de arroz basmati",tags:["📉 Caída de demanda","🌍 Exportación","🍚 Arroz","🏛️ Gobierno"],
+text:"La demanda internacional de arroz basmati cae de forma sostenida. Los exportadores y el gobierno regional deben decidir si reasignan parte de la tierra dedicada a arroz de exportación hacia cultivos de consumo interno como legumbres y verduras (alimento inmediato para la población), o si mantienen la producción de exportación e invierten en infraestructura de procesamiento con la expectativa de que la demanda internacional se recupere (apuesta futura).",
+options:[
+{label:"A",text:"Reasignar una parte significativa de la tierra de exportación hacia alimentos de consumo interno, aceptando reducir la inversión en infraestructura de procesamiento mientras la demanda internacional no se recupera."},
+{label:"B",text:"Reasignar una porción moderada de tierra a alimentos internos y mantener una porción moderada de inversión en infraestructura de exportación, repartiendo el riesgo."},
+{label:"C",text:"Mantener casi toda la tierra en producción de exportación e invertir fuerte en infraestructura de procesamiento, aunque eso limite la oferta de alimentos para el mercado interno."},
+{label:"D",text:"Suponer que la caída de la demanda internacional no afecta la decisión, porque la tierra puede producir arroz de exportación y alimentos internos al mismo tiempo sin ningún límite."}]},
+
+{icon:"♏",name:"Recorte presupuestal en Bihar",tags:["💰 Recorte presupuestal","🌱 Fertilizantes","🥬 Verduras","🏛️ Gobierno"],
+text:"Un recorte presupuestal obliga al ministerio de agricultura de Bihar a elegir entre dos programas, porque el presupuesto restante solo alcanza para financiar uno de ellos a un nivel significativo: subsidiar fertilizante para aumentar la producción inmediata de verduras, o financiar créditos para maquinaria agroindustrial que elevaría la productividad de la región en los próximos años.",
+options:[
+{label:"A",text:"Priorizar el subsidio al fertilizante para sostener la producción de verduras de esta temporada, reconociendo que el programa de créditos para maquinaria quedará prácticamente sin financiamiento."},
+{label:"B",text:"Dividir el presupuesto en partes similares entre ambos programas, aunque ninguno alcance el nivel necesario para lograr todo su efecto esperado."},
+{label:"C",text:"Priorizar casi todo el presupuesto en los créditos para maquinaria agroindustrial, aunque la producción de verduras de esta temporada se vea muy afectada por falta de fertilizante."},
+{label:"D",text:"Solicitar que se financien ambos programas por completo, ignorando que el presupuesto es limitado y ya fue recortado."}]}
+];
+const concepts=["Escasez","Agentes","Oferta","Demanda","Costo de oportunidad","FPP","Eficiencia","Precio","Producción","Capital","Tecnología","Subsidio","Equilibrio","Productividad","Recursos","Consumo","Inversión","Bienestar","Costo","Elección","Inflación","Elasticidad","Especialización","Estado","Riesgo"];
+const challenges=[
+["¿Qué representa la FPP?","Las combinaciones máximas de producción de alimentos y maquinaria agrícola alcanzables con los factores y tecnología disponibles."],
+["¿Qué es el costo de oportunidad?","La alternativa a la que se renuncia al tomar una decisión."],
+["¿Qué significa un punto dentro de la FPP?","Una combinación alcanzable pero ineficiente."],
+["¿Qué significa un punto fuera de la FPP?","Una combinación no alcanzable con los recursos y tecnología actuales."],
+["¿Qué puede ocurrir con una mejora tecnológica?","Puede aumentar la productividad y desplazar la capacidad productiva hacia afuera."],
+["¿Por qué existe escasez?","Porque los factores productivos disponibles son limitados y tienen usos alternativos."],
+["¿Qué pasa si se producen más alimentos hoy?","Se sacrifica parte de la inversión en maquinaria y productividad futura."],
+["¿Qué pasa si se invierte más en maquinaria?","Se sacrifica parte de la producción de alimentos en el presente."]
+];
+let teams=[],scores=[0,0,0,0,0],round=1,turn=0,timerId=null,left=45,optionSet=[],currentSituation=null,currentRotation=0,spinning=false,usedIdx=new Set(),challenge=null,selected=[];
+function $(id){return document.getElementById(id)}
+function startGame(){teams=[n1.value,n2.value,n3.value,n4.value,n5.value].map((x,i)=>x.trim()||"Equipo "+(i+1));$("start").classList.add("hidden");$("game").classList.remove("hidden");renderScores();drawFPP();buildWheel();buildConcepts();$("turn").textContent=teams[0];}
+function renderScores(){$("scores").innerHTML=teams.map((t,i)=>`<div class="team ${i===turn?'active':''}"><span>${i===turn?'🔮 ':''}${t}</span><span class="score">${scores[i]}</span></div>`).join("");}
+function buildWheel(){let colors=["var(--gold)","var(--violet)","var(--green)","var(--red)","var(--orange)"];let bg="conic-gradient(";for(let i=0;i<5;i++){bg+=colors[i]+" "+(i*72)+"deg "+((i+1)*72)+"deg"+(i<4?", ":")");}$("wheelDisc").style.background=bg;let wrap=$("wheelDisc");wrap.querySelectorAll(".sliceLabel").forEach(e=>e.remove());let r=100;for(let i=0;i<5;i++){let ang=(i*72+36)*Math.PI/180;let x=145+r*Math.sin(ang),y=145-r*Math.cos(ang);let e=document.createElement("div");e.className="sliceLabel";e.id="slice"+i;e.style.left=x+"px";e.style.top=y+"px";e.innerHTML=SITUATIONS[i].icon+"<small>Situación "+(i+1)+"</small>";wrap.appendChild(e);}}
+function spinWheel(){if(spinning)return;let remaining=[0,1,2,3,4].filter(i=>!usedIdx.has(i));if(remaining.length===0){alert("Ya se usaron las 5 situaciones.");return;}spinning=true;$("spinBtn").disabled=true;let target=remaining[Math.floor(Math.random()*remaining.length)];let centerAngle=target*72+36;let required=(360-centerAngle)%360;let delta=((required-currentRotation)%360+360)%360;currentRotation+=delta+1800;$("wheelDisc").style.transform="rotate("+currentRotation+"deg)";setTimeout(()=>{spinning=false;usedIdx.add(target);let el=$("slice"+target);if(el)el.classList.add("used");revealSituation(target);},4300);}
+function revealSituation(idx){currentSituation=idx;let s=SITUATIONS[idx];optionSet=s.options;let text=`<div class="tags">${s.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div><h3>${s.icon} ${s.name}</h3><p>${s.text}</p>`;$("situation").innerHTML=text;$("choices").innerHTML=optionSet.map((o,i)=>`<button class="choice" onclick="choose(${i})"><b>${o.label}</b> — ${o.text}</button>`).join("");$("feedback").classList.add("hidden");$("modscoreSit").classList.add("hidden");$("modscoreSit").classList.remove("done");startTimer(45);}
+function startTimer(sec){clearInterval(timerId);left=sec;$("timer").classList.remove("hidden");renderTimer();timerId=setInterval(()=>{left--;renderTimer();if(left<=0){clearInterval(timerId);lock();showModscoreSit()}},1000)}
+function renderTimer(){$("tn").textContent=left;$("fill").style.width=(left/45*100)+"%";$("tn").classList.toggle("danger",left<=10)}
+function choose(i){clearInterval(timerId);lock();$("choices").querySelectorAll(".choice")[i].classList.add("selected");showModscoreSit()}
+function showModscoreSit(){$("feedback").classList.remove("hidden");$("feedback").innerHTML="Alternativa registrada. El equipo sustenta oralmente: recurso escaso, agentes, alternativa sacrificada, costo de oportunidad y ubicación en la FPP.";let row=$("modscoreSitRow");row.innerHTML=[0,1,2,3].map(v=>`<button class="mbtn" onclick="assignScore('sit',${v})">${v}</button>`).join("");$("modscoreSit").classList.remove("hidden")}
+function assignScore(kind,v){scores[turn]+=v;renderScores();if(kind==="sit"){$("modscoreSitRow").querySelectorAll(".mbtn").forEach(b=>b.disabled=true);$("modscoreSit").classList.add("done");$("feedback").innerHTML+="<br><br><b>Puntaje de la decisión registrado por el moderador.</b>"}else{$("modscoreCartaRow").querySelectorAll(".mbtn").forEach(b=>b.disabled=true);$("modscoreCarta").classList.add("done")}}
+function lock(){$("choices").querySelectorAll(".choice").forEach(b=>b.classList.add("locked"))}
+function nextRound(){round++;if(round>5){finish();return}turn=round-1;$("situation").innerHTML="<h3>Nuevo turno 🔮</h3><p>Gira la ruleta para descubrir la situación de este equipo.</p>";$("choices").innerHTML="";$("feedback").classList.add("hidden");$("timer").classList.add("hidden");$("modscoreSit").classList.add("hidden");$("modscoreSit").classList.remove("done");$("modscoreCarta").classList.add("hidden");$("modscoreCarta").classList.remove("done");$("round").textContent=round;$("turn").textContent=teams[turn];$("spinBtn").disabled=false;selected=[];buildConcepts();renderScores();}
+function buildConcepts(){let b=$("concepts");b.innerHTML="";concepts.forEach(c=>{let e=document.createElement("span");e.className="concept"+(selected.includes(c)?" sel":"");e.textContent=c;e.onclick=()=>toggle(c,e);b.appendChild(e)});$("selectedList").textContent=selected.length+"/5 seleccionados"}
+function toggle(c,e){if(selected.includes(c)){selected=selected.filter(x=>x!==c);e.classList.remove("sel")}else if(selected.length<5){selected.push(c);e.classList.add("sel")}$("selectedList").textContent=selected.length+"/5 seleccionados"}
+function drawConstellation(){if(selected.length!==5){alert("Seleccionen exactamente 5 conceptos.");return}let c=$("constCanvas"),x=c.getContext("2d"),w=c.width,h=c.height;x.clearRect(0,0,w,h);x.fillStyle="#080810";x.fillRect(0,0,w,h);let p=selected.map((_,i)=>({x:100+i*175,y:75+(i%2)*120}));x.strokeStyle="#9d7bea";x.lineWidth=2;p.forEach((a,i)=>{if(i<p.length-1){x.beginPath();x.moveTo(a.x,a.y);x.lineTo(p[i+1].x,p[i+1].y);x.stroke()}});p.forEach((a,i)=>{x.fillStyle="#e7bd68";x.beginPath();x.arc(a.x,a.y,9,0,Math.PI*2);x.fill();x.fillStyle="#fff";x.font="14px Arial";x.fillText(selected[i],a.x-45,a.y+31)});let row=$("modscoreCartaRow");row.innerHTML=[0,1,2,3].map(v=>`<button class="mbtn" onclick="assignScore('carta',${v})">${v}</button>`).join("");$("modscoreCarta").classList.remove("hidden");confetti()}
+function drawFPP(){let c=$("fppCanvas"),x=c.getContext("2d"),w=c.width,h=c.height,ox=75,oy=405;x.clearRect(0,0,w,h);x.fillStyle="#0c0a10";x.fillRect(0,0,w,h);x.strokeStyle="#544361";x.lineWidth=1;x.beginPath();x.moveTo(ox,oy);x.lineTo(w-35,oy);x.moveTo(ox,oy);x.lineTo(ox,30);x.stroke();x.fillStyle="#e7bd68";x.font="16px Arial";x.fillText("Alimentos 🍚",w-155,440);x.save();x.translate(25,220);x.rotate(-Math.PI/2);x.fillText("Maquinaria agrícola ⚙️",0,0);x.restore();x.strokeStyle="#9d7bea";x.lineWidth=4;x.beginPath();x.moveTo(ox,75);x.quadraticCurveTo(320,75,w-80,oy);x.stroke();let pts=[{x:145,y:150,n:"A"},{x:420,y:190,n:"B"},{x:690,y:300,n:"C"},{x:370,y:315,n:"D"},{x:790,y:125,n:"E"}];pts.forEach(p=>{x.fillStyle=p.n==="D"?"#72a7ed":p.n==="E"?"#ed6e86":"#e7bd68";x.beginPath();x.arc(p.x,p.y,9,0,Math.PI*2);x.fill();x.fillStyle="#fff";x.font="bold 14px Arial";x.fillText(p.n,p.x+12,p.y-8)})}
+function newChallenge(){challenge=challenges[Math.floor(Math.random()*challenges.length)];$("question").textContent="⚡ "+challenge[0];$("answer").classList.add("hidden")}
+function revealChallenge(){if(!challenge)return;$("answer").classList.remove("hidden");$("answer").innerHTML="<span class='correct'>💡 Respuesta:</span> "+challenge[1]}
+function finish(){let a=teams.map((t,i)=>({t,s:scores[i]})).sort((a,b)=>b.s-a.s);showModal("<div style='text-align:center'><div style='font-size:60px'>🏆</div><h2>RESULTADO FINAL</h2>"+a.map((v,i)=>`<p>${["🥇","🥈","🥉","⭐","✨"][i]} <b>${v.t}</b> — ${v.s} puntos</p>`).join("")+"</div>");confetti()}
+function showModal(h){$("modalText").innerHTML=h;$("modal").classList.remove("hidden")}function closeModal(){$("modal").classList.add("hidden")}
+function confetti(){for(let i=0;i<45;i++){let p=document.createElement("div");p.className="piece";p.style.left=Math.random()*100+"%";p.style.top="-20px";p.style.background=["#e7bd68","#9d7bea","#fff","#55d49b","#ed6e86"][i%5];p.style.animationDelay=Math.random()+"s";$("confetti").appendChild(p);setTimeout(()=>p.remove(),2300)}}
+</script>
+</body>
+</html>
